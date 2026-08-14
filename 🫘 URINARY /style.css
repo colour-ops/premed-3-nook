@@ -1,0 +1,104 @@
+/* css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+    --bg-color: #FCF9F2;
+    --sage-light: #E8EFE5;
+    --sage-dark: #7A8B76;
+    --pink-light: #FDE8EC;
+    --pink-dark: #D98895;
+    --text-main: #5C4A4D;
+    --text-muted: #8A7679;
+    --card-bg: rgba(255, 255, 255, 0.8);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(var(--pink-light) 1.5px, transparent 1.5px);
+    background-size: 25px 25px;
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* Lebar optimal untuk desain ala mobile/tablet */
+}
+
+/* Typography */
+h1 { font-family: 'Playfair Display', serif; color: var(--pink-dark); font-size: 2rem; text-align: center; }
+h2 { font-family: 'Playfair Display', serif; color: var(--sage-dark); font-size: 1.3rem; margin-bottom: 15px; text-align: center;}
+.subtitle { text-align: center; color: var(--sage-dark); font-style: italic; margin-bottom: 30px; font-size: 0.95rem; }
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border: 2px solid var(--pink-light);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(217, 136, 149, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(217, 136, 149, 0.2);
+    border-color: var(--pink-dark);
+}
+
+/* Progress Bar */
+.progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-weight: bold; color: var(--pink-dark);}
+.progress-track { background: var(--sage-light); border-radius: 10px; height: 12px; overflow: hidden; }
+.progress-fill { background: var(--pink-dark); height: 100%; border-radius: 10px; }
+
+/* Grid Layouts */
+.garden-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.garden-item {
+    background: var(--card-bg);
+    border: 1px solid var(--sage-light);
+    border-radius: 15px;
+    width: 100px;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.2s;
+}
+.garden-item:hover { background: var(--sage-light); transform: scale(1.05); }
+.garden-icon { font-size: 2rem; margin-bottom: 5px; display: block; }
+.garden-label { font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.stats-card { text-align: center; padding: 15px; }
+.stats-title { font-weight: bold; color: var(--sage-dark); margin-bottom: 5px; }
+
+/* Links & Buttons */
+.tracker-link { display: block; text-align: right; color: var(--sage-dark); font-weight: bold; text-decoration: none; margin-top: 10px; }
+.tracker-link:hover { color: var(--pink-dark); }
+.back-link { display: inline-block; color: var(--text-muted); text-decoration: none; font-weight: bold; margin-bottom: 20px; font-size: 0.9rem; transition: color 0.2s;}
+.back-link:hover { color: var(--pink-dark); }
+
+/* Material Cards */
+.material-card { display: flex; justify-content: space-between; align-items: center; }
+.material-info h3 { font-size: 1.1rem; color: var(--pink-dark); margin-bottom: 5px; }
+.material-info p { font-size: 0.85rem; color: var(--text-muted); }
+.material-meta { font-size: 0.8rem; font-weight: bold; color: var(--sage-dark); margin-top: 10px; }
+.arrow { font-size: 1.2rem; color: var(--pink-dark); }
